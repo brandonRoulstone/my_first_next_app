@@ -5,16 +5,22 @@
 
 // have to use Client for router
 "use client"
+import Link from 'next/link';
 import { useRouter } from 'next/navigation'
 
-const page = () => {
-  const router = useRouter()
+const Home = () => {
+  const router = useRouter();
+
+  const navigate = (page) => {
+    router.push(page)
+  }
+
   return (
     <section>
       <h1>useRouter</h1>
-      <button className='border px-3 py-3' onClick={() => {router.push("about")}}>Go to about</button>
+      <button className='border px-3 py-3'onClick={() => {navigate("about")}}>Go to about</button>
     </section>
   )
 }
 
-export default page
+export default Home
